@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/background3"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.bluetooth.admin.balencecar.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:paddingBottom="40dp"
+        android:paddingTop="60dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp">
+
+            <Button
+
+                android:id="@+id/button_task_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_style_circle"
+                android:text="  任务一  "
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/button_task_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_style_circle"
+                android:text="  任务二  "
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/button_task_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_style_circle"
+                android:text="  任务三  "
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/button_task_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_style_circle"
+                android:text="  任务四  "
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp">
+
+            <Button
+                android:id="@+id/button_task_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_style_circle"
+                android:text="  发挥一  "
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/button_task_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_style_circle"
+                android:text="  发挥二  "
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/button_task_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_style_circle"
+                android:text="  发挥三  "
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/button_task_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_style_circle"
+                android:text="  发挥四  "
+                android:textSize="25sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:orientation="vertical"
+        android:layout_weight="4"
+        android:paddingBottom="0dp"
+        android:paddingTop="0dp">
+
+        <Button
+            android:id="@+id/button_break"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_style_circle"
+            android:text="返回" />
+
+    </LinearLayout>
+</LinearLayout>
