@@ -95,6 +95,12 @@ public class MainActivity extends Activity {
         if (bluetoothAdapter.isEnabled()) {
             bluetoothSwitch.setChecked(true);
         }
+        String name = bluetoothAdapter.getName();
+        //获取本地蓝牙地址
+        String address = bluetoothAdapter.getAddress();
+        //打印相关信息
+        Log.i("BLE Name", name);
+        Log.i("BLE Address", address);
 
         /*添加蓝牙列表*/
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, list);
