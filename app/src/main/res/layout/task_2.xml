@@ -29,6 +29,8 @@
         android:layout_marginTop="20dp"
         android:text="    在 15 秒内，控制小球从区域 1 进入区域 5，在区域 5 停留不少于 2 秒。" />
 
+
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

@@ -77,12 +77,11 @@ public class Task_chukong extends Activity {
             @Override
             public void onClick(View v) {
                 v.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS,HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
-                Intent intent =new Intent(Task_chukong.this,Task_8.class);
-                startActivity(intent);
                 String s1="$0";
                 String s2="#";
                 String s=s1+s2;
                 SendBlueToothProtocol(s);
+                finish();
             }
         });
     }

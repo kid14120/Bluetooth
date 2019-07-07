@@ -289,9 +289,9 @@ public class MyService extends Service{
                 }
                 if (cmd == CMD_CONNECT_BLUETOOTH)
                 {
-                    //address =  intent.getStringExtra("Mac");
-                    //Log.i("CMD_CONNECT_BLUETOOTH", address);
-                    //doJob();
+                    address =  intent.getStringExtra("Mac");
+                    Log.i("CMD_CONNECT_BLUETOOTH", address);
+                    doJob();
                 }
             }
         }

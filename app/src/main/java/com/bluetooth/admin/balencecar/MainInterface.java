@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -31,7 +32,8 @@ import java.util.Set;
  * Created by 79463 on 2019/6/2.
  */
 
-public class MainInterface extends Activity {    private BluetoothAdapter bluetoothAdapter;
+public class MainInterface extends Activity {
+    private BluetoothAdapter bluetoothAdapter;
     private Switch bluetoothSwitch;
     private Button bluetoothSearch;
     private Spinner bluetoothList;
@@ -53,7 +55,7 @@ public class MainInterface extends Activity {    private BluetoothAdapter blueto
     private Button task_7;
     private Button task_8;
     private Button task_9;
-
+    private TextView test;
     /*功能按钮*/
 
     //msg 定义
@@ -91,6 +93,7 @@ public class MainInterface extends Activity {    private BluetoothAdapter blueto
         task_7 = (Button) findViewById(R.id.button_task_7);
         task_8 = (Button) findViewById(R.id.button_task_8);
         task_9 = (Button) findViewById(R.id.button_break);
+        test=findViewById(R.id.textView4);
 
 
         task_1.setOnTouchListener(b);
@@ -189,18 +192,18 @@ public class MainInterface extends Activity {    private BluetoothAdapter blueto
                 }
                 else if(cmd == CMD_RECEIVE_DATA)  //此处是可以接收蓝牙发送过来的数据可以解析，此例程暂时不解析返回来的数据，需要解析的在我们的全功能版会有
                 {
-//                    String strtemp = bundle.getString("str");
-//                    int start = strtemp.indexOf("$");
-//                    int end = strtemp.indexOf("#");
-//
-//                    if (start >= 0 && end > 0 && end > start && strtemp.length() > 23 )
-//                    {
-//                        String str = strtemp.substring(23);
-//                        String strCSB = str.substring(0, str.indexOf(","));
-//                        String strVolume = str.substring(str.indexOf(",")+1, str.indexOf("#"));
-//                        tvCSB.setText(strCSB);
-//                        tvVolume.setText(strVolume);
-//                    }
+                    String strtemp = bundle.getString("str");
+                    int start = strtemp.indexOf("$");
+                    int end = strtemp.indexOf("#");
+
+                    if (start >= 0 && end > 0 && end > start && strtemp.length() > 23 )
+                   {
+                       String str = strtemp.substring(23);
+                       String strCSB = str.substring(0, str.indexOf(","));
+                       String strVolume = str.substring(str.indexOf(",")+1, str.indexOf("#"));
+                       test.setText(strCSB);
+//                       tvVolume.setText(strVolume);
+                    }
                 }
 
             }
@@ -242,7 +245,7 @@ public class MainInterface extends Activity {    private BluetoothAdapter blueto
                     if (event.getAction() == MotionEvent.ACTION_DOWN) {
                         v.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS,HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                         v.playSoundEffect(SoundEffectConstants.CLICK);
-                        SendBlueToothProtocol("$1,0,0,0,0,0,0,0,0,0#");
+                        SendBlueToothProtocol("$1#");
                         Intent intent1=new Intent(MainInterface.this,Task_1.class);
                         startActivity(intent1);
                     }
@@ -253,13 +256,13 @@ public class MainInterface extends Activity {    private BluetoothAdapter blueto
                     if (event.getAction() == MotionEvent.ACTION_DOWN) {
                         v.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS,HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                         v.playSoundEffect(SoundEffectConstants.CLICK);
-                        SendBlueToothProtocol("$2,0,0,0,0,0,0,0,0,0#");
+                        SendBlueToothProtocol("$2#");
                         Intent intent1=new Intent(MainInterface.this,Task_2.class);
                         startActivity(intent1);
                     }
                 }break;
 
-                case R.id.button_task_3: {
+               case R.id.button_task_3: {
                     if (event.getAction() == MotionEvent.ACTION_DOWN) {
                         v.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS,HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                         v.playSoundEffect(SoundEffectConstants.CLICK);
@@ -283,7 +286,7 @@ public class MainInterface extends Activity {    private BluetoothAdapter blueto
                     if (event.getAction() == MotionEvent.ACTION_DOWN) {
                         v.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS,HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                         v.playSoundEffect(SoundEffectConstants.CLICK);
-                        SendBlueToothProtocol("$5,0,0,0,0,0,0,0,0,0#");
+                        SendBlueToothProtocol("$5#");
                         Intent intent=new Intent(MainInterface.this,Task_5.class);
                         startActivity(intent);
                     }
@@ -294,14 +297,14 @@ public class MainInterface extends Activity {    private BluetoothAdapter blueto
                     if (event.getAction() == MotionEvent.ACTION_DOWN) {
                         v.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS,HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                         v.playSoundEffect(SoundEffectConstants.CLICK);
-                        SendBlueToothProtocol("$6,0,0,0,0,0,0,0,0,0#");
+                        SendBlueToothProtocol("$6#");
                         Intent intent=new Intent(MainInterface.this,Task_6.class);
                         startActivity(intent);
                     }
                 } break;
 
                 /*右旋*/
-                case R.id.button_task_7: {
+               case R.id.button_task_7: {
                     if (event.getAction() == MotionEvent.ACTION_DOWN) {
                         v.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS,HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                         v.playSoundEffect(SoundEffectConstants.CLICK);
@@ -325,8 +328,7 @@ public class MainInterface extends Activity {    private BluetoothAdapter blueto
                     if (event.getAction() == MotionEvent.ACTION_DOWN) {
                         v.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS,HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
                         v.playSoundEffect(SoundEffectConstants.CLICK);
-                        Intent intent=new Intent(MainInterface.this,MainActivity.class);
-                        startActivity(intent);
+                        finish();
                     }
                 }break;
 

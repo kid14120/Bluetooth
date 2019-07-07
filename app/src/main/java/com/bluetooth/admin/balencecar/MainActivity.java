@@ -142,7 +142,7 @@ public class MainActivity extends Activity {
         bluetoothSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                view.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS,HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
+                view.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS,HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);//震动
                 if (bluetoothAdapter == null) {
                     Toast.makeText(MainActivity.this, "未发现蓝牙设备", Toast.LENGTH_SHORT).show();
                     return;
