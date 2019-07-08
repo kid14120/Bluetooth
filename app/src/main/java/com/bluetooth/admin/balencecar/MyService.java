@@ -108,8 +108,10 @@ public class MyService extends Service{
                     byte[] buff = new byte[1];
                     len = inStream.read(buff);
                     //把读取到的数据发送给UI进行显示
-                    String strBuffer = new String(buff);
+                    String s = len+"";
 
+                    String strBuffer = new String(buff);
+                    //Log.i("len",strBuffer);
                     if(strBuffer.equals("$"))
                     {
                         start = true;
@@ -123,6 +125,7 @@ public class MyService extends Service{
                     if(strBuffer.equals("#"))
                     {
                         start = false;
+                        Log.i("len1",strMsg);
                         SendMainActiveBlutoothData(strMsg);
                     }
                     buff = null;

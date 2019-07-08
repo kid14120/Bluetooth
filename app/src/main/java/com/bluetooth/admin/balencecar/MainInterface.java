@@ -55,7 +55,8 @@ public class MainInterface extends Activity {
     private Button task_7;
     private Button task_8;
     private Button task_9;
-    private TextView test;
+    private TextView tvCSB;
+    private TextView tvVolume;
     /*功能按钮*/
 
     //msg 定义
@@ -93,8 +94,8 @@ public class MainInterface extends Activity {
         task_7 = (Button) findViewById(R.id.button_task_7);
         task_8 = (Button) findViewById(R.id.button_task_8);
         task_9 = (Button) findViewById(R.id.button_break);
-        test=findViewById(R.id.textView4);
-
+        tvCSB=findViewById(R.id.textView4);
+        tvVolume=findViewById(R.id.textView5);
 
         task_1.setOnTouchListener(b);
         task_2.setOnTouchListener(b);
@@ -107,31 +108,6 @@ public class MainInterface extends Activity {
         task_9.setOnTouchListener(b);
 
     }
-
-
-
-    private BroadcastReceiver mReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            Log.e("fond:", "mReceiver");
-
-            String action = intent.getAction();
-            if (BluetoothDevice.ACTION_FOUND.equals(action)) {
-                BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                // 已经配对的则跳过
-                if (device.getBondState() != BluetoothDevice.BOND_BONDED) {
-                    adapter.add(device.getAddress());
-                }
-
-            } else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)) {  //搜索结束
-                Log.e("fond:", "ACTION_DISCOVERY_FINISHED");
-                if (adapter.getCount() == 0) {
-                    Toast.makeText(MainInterface.this, "没有搜索到设备", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-        }
-    };
 
 /*********************************************************************************************/
 
@@ -201,8 +177,8 @@ public class MainInterface extends Activity {
                        String str = strtemp.substring(23);
                        String strCSB = str.substring(0, str.indexOf(","));
                        String strVolume = str.substring(str.indexOf(",")+1, str.indexOf("#"));
-                       test.setText(strCSB);
-//                       tvVolume.setText(strVolume);
+                       tvCSB.setText(strCSB);
+                       tvVolume.setText(strVolume);
                     }
                 }
 

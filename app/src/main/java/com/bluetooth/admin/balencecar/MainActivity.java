@@ -55,6 +55,8 @@ public class MainActivity extends Activity {
     private String strMacAddress;
     private static boolean booleanConnect = false;
     private Button mbstart;
+    private TextView tvCSB;
+    private TextView tvVolume;
     //msg 定义
     private static final int msgShowConnect = 1;
 
@@ -84,6 +86,8 @@ public class MainActivity extends Activity {
         bluetoothList = (Spinner) findViewById(R.id.list_bluetooth);
         bluetoothConnect = (Button) findViewById(R.id.buttonConnect);
         mbstart =findViewById(R.id.button_start);
+        tvCSB=findViewById(R.id.textView_text1);
+        tvVolume=findViewById(R.id.textView_text2);
 
         /*检查手机是否支持蓝牙*/
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -192,7 +196,6 @@ public class MainActivity extends Activity {
                         intent.putExtra("cmd", CMD_STOP_SERVICE);
                         sendBroadcast(intent);//发送广播连接蓝牙
 
-
                     }
 
                 }
@@ -291,18 +294,19 @@ public class MainActivity extends Activity {
                 }
                 else if(cmd == CMD_RECEIVE_DATA)  //此处是可以接收蓝牙发送过来的数据可以解析，此例程暂时不解析返回来的数据，需要解析的在我们的全功能版会有
                 {
-//                    String strtemp = bundle.getString("str");
-//                    int start = strtemp.indexOf("$");
-//                    int end = strtemp.indexOf("#");
-//
-//                    if (start >= 0 && end > 0 && end > start && strtemp.length() > 23 )
-//                    {
-//                        String str = strtemp.substring(23);
-//                        String strCSB = str.substring(0, str.indexOf(","));
-//                        String strVolume = str.substring(str.indexOf(",")+1, str.indexOf("#"));
-//                        tvCSB.setText(strCSB);
-//                        tvVolume.setText(strVolume);
-//                    }
+                    String strtemp = bundle.getString("str");
+                    Log.i("tv",strtemp);
+                    int start = strtemp.indexOf("$");
+                    int end = strtemp.indexOf("#");
+                    tvCSB.setText(strtemp);
+                    if (start >= 0 && end > 0 && end > start && strtemp.length() > 23 )
+                    {
+                        String str = strtemp.substring(23);
+                        String strCSB = str.substring(0, str.indexOf(","));
+                        String strVolume = str.substring(str.indexOf(",")+1, str.indexOf("#"));
+
+                        tvVolume.setText(strVolume);
+                    }
                 }
 
             }
